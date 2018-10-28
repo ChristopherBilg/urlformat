@@ -83,7 +83,7 @@ class UrlBuilder(object):
 
     def build_url(self):
         """
-        Build and url the full url as a string.
+        Build the full url as a string.
         """
         if self.query is None:
             query = ""
@@ -95,8 +95,12 @@ class UrlBuilder(object):
         else:
             fragment = "#" + self.fragment
 
-        built_url = self.scheme + "://" + self.authority + self.path \
-            + query + fragment
+        if self.scheme is None:
+            scheme = ""
+        else:
+            scheme = self.scheme + "://"
+
+        built_url = scheme + self.authority + self.path + query + fragment
         return built_url
 
     def set_scheme(self, scheme):
@@ -140,7 +144,7 @@ class UrlBuilder(object):
 
 
 if __name__ == "__main__":
-    GOOGLE = UrlParser("https://www.google.com/test#products")
+    GOOGLE = UrlParser("https://www.google.com:8000/test#products")
     REDDIT = UrlParser("https://reddit.com?name=example&x=2&n=4")
     RANDOM = UrlParser(
         "http://[1000::1001:1510]/web/page?userId=0123456789#fragment")
@@ -162,10 +166,10 @@ if __name__ == "__main__":
     print RANDOM.get_fragment()
 
     TEST = UrlBuilder()
-    TEST.set_scheme("https")
     TEST.set_authority("www.example.com")
     TEST.set_path("/path/to/file")
     TEST.set_fragment("fragment")
+    TEST.set_scheme("https")
     TEST.add_query("name=example1")
     TEST.add_query("username=example2")
 
