@@ -25,39 +25,39 @@ class UrlParser(object):
         """
         Getter method for the url itself.
         """
-        return self.match.group(0) if self.match.group(0) != None else ""
+        return self.match.group(0) if self.match.group(0) is not None else ""
 
     def get_scheme(self):
         """
         Getter method for the url scheme. Ex: http, https, skype
         """
-        return self.match.group(2) if self.match.group(2) != None else ""
+        return self.match.group(2) if self.match.group(2) is not None else ""
 
     def get_authority(self):
         """
         Getter method for the authority (domain) of the url.
         """
-        return self.match.group(4) if self.match.group(4) != None else ""
+        return self.match.group(4) if self.match.group(4) is not None else ""
 
     def get_path(self):
         """
         Getter method for the path that the url contains.
         """
-        return self.match.group(5) if self.match.group(5) != None else ""
+        return self.match.group(5) if self.match.group(5) is not None else ""
 
     def get_query(self):
         """
         Getter method for the [optional] query contained in the url.
         Ex: ?test=example
         """
-        return self.match.group(7) if self.match.group(7) != None else ""
+        return self.match.group(7) if self.match.group(7) is not None else ""
 
     def get_fragment(self):
         """
         Getter method for the [optional] fragment contained in the url.
         Ex: #example
         """
-        return self.match.group(9) if self.match.group(9) != None else ""
+        return self.match.group(9) if self.match.group(9) is not None else ""
 
 
 class UrlBuilder(object):
@@ -73,7 +73,7 @@ class UrlBuilder(object):
         self.match = re.search(
             r"^(([^:/?#]+):)?(//([^/?#]*))?([^?#]*)(\?([^#]*))?(#(.*))?",
             url)
-        
+
         self.scheme = self.match.group(2)
         self.authority = self.match.group(4)
         self.path = self.match.group(5)
@@ -85,18 +85,18 @@ class UrlBuilder(object):
         """
         Build and url the full url as a string.
         """
-        if(self.query == None):
+        if self.query is None:
             query = ""
         else:
             query = "?" + self.query
 
-        if(self.fragment == None):
+        if self.fragment is None:
             fragment = ""
         else:
             fragment = "#" + self.fragment
-        
+
         built_url = self.scheme + "://" + self.authority + self.path \
-                    + query + fragment
+            + query + fragment
         return built_url
 
     def set_scheme(self, scheme):
@@ -124,13 +124,10 @@ class UrlBuilder(object):
         """
         Add a query to the query "builder"
         """
-        if(self.query == None):
+        if self.query is None:
             self.query = query
         else:
             self.query += "&" + query
-        
-        #if(self.query[0] == "&"):
-        #    self.query = self.query[1:]
 
         return
 
@@ -145,7 +142,8 @@ class UrlBuilder(object):
 if __name__ == "__main__":
     GOOGLE = UrlParser("https://www.google.com/test#products")
     REDDIT = UrlParser("https://reddit.com?name=example&x=2&n=4")
-    RANDOM = UrlParser("http://[1000::1001:1510]/web/page?userId=0123456789#fragment")
+    RANDOM = UrlParser(
+        "http://[1000::1001:1510]/web/page?userId=0123456789#fragment")
 
     print GOOGLE.get_scheme()
     print REDDIT.get_scheme()
@@ -163,12 +161,12 @@ if __name__ == "__main__":
     print REDDIT.get_fragment()
     print RANDOM.get_fragment()
 
-    url = UrlBuilder()
-    url.set_scheme("https")
-    url.set_authority("www.example.com")
-    url.set_path("/path/to/file")
-    url.set_fragment("fragment")
-    url.add_query("name=example1")
-    url.add_query("username=example2")
+    TEST = UrlBuilder()
+    TEST.set_scheme("https")
+    TEST.set_authority("www.example.com")
+    TEST.set_path("/path/to/file")
+    TEST.set_fragment("fragment")
+    TEST.add_query("name=example1")
+    TEST.add_query("username=example2")
 
-    print url.build_url()
+    print TEST.build_url()
