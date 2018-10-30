@@ -34,7 +34,7 @@ class UrlParser():
 
     def __len__(self):
         """
-        Implements the built-in function len().
+        Implementation of the len() method.
         """
         return len(self.get_url())
 

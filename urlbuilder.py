@@ -27,6 +27,24 @@ class UrlBuilder():
         self.query = self.match.group(7)
         self.fragment = self.match.group(9)
 
+    def __repr__(self):
+        """
+        Formal string representation of the url.
+        """
+        return self.build_url()
+
+    def __str__(self):
+        """
+        Informal string representation of the url.
+        """
+        return self.build_url()
+
+    def __len__(self):
+        """
+        Implementation of the len() method.
+        """
+        return len(self.build_url())
+
     def build_url(self):
         """
         Build the full url as a string.
