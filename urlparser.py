@@ -20,6 +20,24 @@ class UrlParser():
             r"^(([^:/?#]+):)?(//([^/?#]*))?([^?#]*)(\?([^#]*))?(#(.*))?",
             url)
 
+    def __repr__(self):
+        """
+        Formal string representation of the url.
+        """
+        return self.get_url()
+
+    def __str__(self):
+        """
+        Informal string representation of the url.
+        """
+        return self.get_url()
+
+    def __len__(self):
+        """
+        Implements the built-in function len().
+        """
+        return len(self.get_url())
+
     def get_url(self):
         """
         Getter method for the url itself.
