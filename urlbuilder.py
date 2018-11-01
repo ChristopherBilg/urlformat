@@ -2,8 +2,6 @@
 """
 Class for building valid urls.
 """
-
-
 import re
 
 

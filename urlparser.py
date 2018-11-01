@@ -2,8 +2,6 @@
 """
 Parser class for parsing through web urls.
 """
-
-
 import re
 
 
