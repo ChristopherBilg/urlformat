@@ -9,7 +9,7 @@ from urlbuilder import UrlBuilder
 
 if __name__ == "__main__":
     GOOGLE = UrlParser("https://www.google.com:8000/test#products")
-    REDDIT = UrlParser("https://account_1@github.com?name=example&x=2&n=4")
+    REDDIT = UrlParser("account_1@github.com?name=example&x=2&n=4")
     RANDOM = UrlParser(
         "http://[1000::1001:1510]/web/page?userId=0123456789#fragment")
 
@@ -39,6 +39,8 @@ if __name__ == "__main__":
 
     print(TEST.build_url())
 
-    print(GOOGLE.is_valid())
-    print(REDDIT.is_valid())
-    print(RANDOM.is_valid())
+    # print(GOOGLE.is_valid())
+    # print(REDDIT.is_valid())
+    # print(RANDOM.is_valid())
+    # finishing implementation of is_valid for both urlparser and urlbuilder
+    # add .gitignore for __pycache__/
