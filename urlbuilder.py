@@ -62,7 +62,17 @@ class UrlBuilder():
         else:
             scheme = self.scheme + "://"
 
-        built_url = scheme + self.authority + self.path + query + fragment
+        if self.authority is None:
+            authority = ""
+        else:
+            authority = self.authority
+
+        if self.path is None:
+            path = ""
+        else:
+            path = self.path
+
+        built_url = scheme + authority + path + query + fragment
         return built_url
 
     def set_scheme(self, scheme):
@@ -97,6 +107,14 @@ class UrlBuilder():
         Set the fragment of the url.
         """
         self.fragment = fragment
+
+    def is_valid(self):
+        """
+        Boolean method for obtaining the validity of the built url.
+        """
+        if self.scheme is not None and self.authority is not None:
+            return True
+        return False
 
 
 if __name__ == "__main__":

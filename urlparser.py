@@ -74,6 +74,14 @@ class UrlParser():
         """
         return self.match.group(9) if self.match.group(9) is not None else ""
 
+    def is_valid(self):
+        """
+        Boolean method for obtaining the validity of the parsed url.
+        """
+        if self.match.group(2) is not None and self.match.group(4) is not None:
+            return True
+        return False
+
 
 if __name__ == "__main__":
     print("To use this package, please import it into your python script.")

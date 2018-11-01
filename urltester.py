@@ -38,9 +38,8 @@ if __name__ == "__main__":
     TEST.add_query("username=example2")
 
     print(TEST.build_url())
+    print("TEST: " + str(TEST.is_valid()))
 
-    # print(GOOGLE.is_valid())
-    # print(REDDIT.is_valid())
-    # print(RANDOM.is_valid())
-    # finishing implementation of is_valid for both urlparser and urlbuilder
-    # add .gitignore for __pycache__/
+    print("Google: " + str(GOOGLE.is_valid()))
+    print("Reddit: " + str(REDDIT.is_valid()))
+    print("Random: " + str(RANDOM.is_valid()))
