@@ -43,3 +43,5 @@ if __name__ == "__main__":
     print("Google: " + str(GOOGLE.is_valid()))
     print("Reddit: " + str(REDDIT.is_valid()))
     print("Random: " + str(RANDOM.is_valid()))
+
+    # Implement the unittest module
