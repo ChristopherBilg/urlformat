@@ -32,7 +32,7 @@ if __name__ == "__main__":
     TEST = UrlBuilder()
     TEST.set_authority("www.example.com")
     TEST.set_path("/path/to/file")
-    TEST.set_scheme("http")
+    TEST.set_scheme("https")
     TEST.set_fragment("fragment")
     TEST.add_query("name=example1")
     TEST.add_query("username=example2")
