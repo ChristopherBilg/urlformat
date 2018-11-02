@@ -3,45 +3,51 @@
 Class for testing the UrlParser and UrlBuilder classes.
 (scheme://)([userInfo@]authority[:port])[/path/to/file][?query][#fragment]
 """
+import unittest
 from urlparser import UrlParser
 from urlbuilder import UrlBuilder
 
 
+class TestUrlParser(unittest.TestCase):
+    url = UrlParser(
+        "https://www.google.com:8000/path/to/file?one=1&two=2#products")
+
+    def test_valid(self):
+        assert self.url.is_valid()
+
+    def test_scheme(self):
+        assert self.url.get_scheme() == "https"
+
+    def test_authority(self):
+        assert self.url.get_authority() == "www.google.com:8000"
+
+    def test_path(self):
+        assert self.url.get_path() == "/path/to/file"
+
+    def test_query(self):
+        assert self.url.get_query() == "one=1&two=2"
+
+    def test_fragment(self):
+        assert self.url.get_fragment() == "products"
+
+
+class TestUrlBuilder(unittest.TestCase):
+    url = UrlBuilder()
+    url.set_authority("www.example.com")
+    url.set_path("/path/to/file")
+    url.set_scheme("https")
+    url.set_fragment("fragment")
+    url.add_query("name=example1")
+    url.add_query("username=example2")
+
+    def test_valid(self):
+        assert self.url.is_valid()
+
+    def test_build(self):
+        assert (self.url.build_url() ==
+                "https://www.example.com/path/to/file?name=example"
+                "1&username=example2#fragment")
+
+
 if __name__ == "__main__":
-    GOOGLE = UrlParser("https://www.google.com:8000/test#products")
-    REDDIT = UrlParser("account_1@github.com?name=example&x=2&n=4")
-    RANDOM = UrlParser(
-        "http://[1000::1001:1510]/web/page?userId=0123456789#fragment")
-
-    print(GOOGLE.get_scheme())
-    print(REDDIT.get_scheme())
-    print(RANDOM.get_scheme())
-    print(GOOGLE.get_authority())
-    print(REDDIT.get_authority())
-    print(RANDOM.get_authority())
-    print(GOOGLE.get_path())
-    print(REDDIT.get_path())
-    print(RANDOM.get_path())
-    print(GOOGLE.get_query())
-    print(REDDIT.get_query())
-    print(RANDOM.get_query())
-    print(GOOGLE.get_fragment())
-    print(REDDIT.get_fragment())
-    print(RANDOM.get_fragment())
-
-    TEST = UrlBuilder()
-    TEST.set_authority("www.example.com")
-    TEST.set_path("/path/to/file")
-    TEST.set_scheme("https")
-    TEST.set_fragment("fragment")
-    TEST.add_query("name=example1")
-    TEST.add_query("username=example2")
-
-    print(TEST.build_url())
-    print("TEST: " + str(TEST.is_valid()))
-
-    print("Google: " + str(GOOGLE.is_valid()))
-    print("Reddit: " + str(REDDIT.is_valid()))
-    print("Random: " + str(RANDOM.is_valid()))
-
-    # Implement the unittest module
+    unittest.main()
