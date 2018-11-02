@@ -11,7 +11,7 @@ pycodestyle urlbuilder.py
 flake8 urlbuilder.py
 
 echo "Starting lint on urltester.py"
-pylint urltester.py --score=no
+pylint urltester.py --score=no --disable=C0111
 pycodestyle urltester.py
 flake8 urltester.py
 
