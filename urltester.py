@@ -10,7 +10,7 @@ from urlbuilder import UrlBuilder
 
 class TestUrlParser(unittest.TestCase):
     url = UrlParser(
-        "https://www.google.com:8000/path/to/file?one=1&two=2#products")
+        "https://user:pass@www.google.com:8000/path/to/file?one=1&two=2#prod")
 
     def test_valid(self):
         assert self.url.is_valid()
@@ -19,7 +19,7 @@ class TestUrlParser(unittest.TestCase):
         assert self.url.get_scheme() == "https"
 
     def test_authority(self):
-        assert self.url.get_authority() == "www.google.com:8000"
+        assert self.url.get_authority() == "user:pass@www.google.com:8000"
 
     def test_path(self):
         assert self.url.get_path() == "/path/to/file"
@@ -28,7 +28,22 @@ class TestUrlParser(unittest.TestCase):
         assert self.url.get_query() == "one=1&two=2"
 
     def test_fragment(self):
-        assert self.url.get_fragment() == "products"
+        assert self.url.get_fragment() == "prod"
+
+    def test_file(self):
+        assert self.url.get_file() == "file"
+
+    def test_username(self):
+        assert self.url.get_username() == "user"
+
+    def test_password(self):
+        assert self.url.get_password() == "pass"
+
+    def test_hostname(self):
+        assert self.url.get_hostname() == "www.google.com"
+
+    def test_port(self):
+        assert self.url.get_port() == "8000"
 
 
 class TestUrlBuilder(unittest.TestCase):

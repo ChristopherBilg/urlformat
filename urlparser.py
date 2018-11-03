@@ -82,6 +82,68 @@ class UrlParser():
             return True
         return False
 
+    def get_file(self):
+        """
+        Getter method for the file at the end of the path.
+        """
+        if "/" in self.match.group(5):
+            return self.match.group(5).split("/")[-1]
+        return self.match.group(5)
+
+    def get_username(self):
+        """
+        Getter method for the username in the URL authority.
+        """
+        if "@" in self.match.group(4):
+            if ":" in self.match.group(4).split("@")[0]:
+                return self.match.group(4).split("@")[0].split(":")[0]
+            else:
+                return self.match.group(4).split("@")[0]
+        else:
+            return None
+
+    def get_password(self):
+        """
+        Getter method for the password in the URL authority.
+        """
+        if "@" in self.match.group(4):
+            if ":" in self.match.group(4).split("@")[0]:
+                return self.match.group(4).split("@")[0].split(":")[1]
+            else:
+                return None
+        else:
+            return None
+
+    def get_hostname(self):
+        """
+        Getter method for the hostname in the URL authority.
+        """
+        if "@" in self.match.group(4):
+            if ":" in self.match.group(4).split("@")[1]:
+                return self.match.group(4).split("@")[1].split(":")[0]
+            else:
+                return self.match.group(4).split("@")[1]
+        else:
+            if ":" in self.match.group(4):
+                return self.match.group(4).split(":")[0]
+            else:
+                return self.match.group(4)
+
+    def get_port(self):
+        """
+        Getter method for the port in the URL authority.
+        """
+        if "@" in self.match.group(4):
+            if ":" in self.match.group(4).split("@")[1]:
+                return self.match.group(4).split("@")[1].split(":")[1]
+            else:
+                return None
+        else:
+            if ":" in self.match.group(4):
+                return self.match.group(4).split(":")[1]
+            else:
+                return None
+
 
 if __name__ == "__main__":
     print("To use this package, please import it into your python script.")
