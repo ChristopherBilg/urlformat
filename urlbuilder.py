@@ -87,18 +87,21 @@ class UrlBuilder():
         Set the local self.scheme to a new scheme type.
         """
         self.scheme = scheme
+        return self
 
     def set_authority(self, authority):
         """
         Set the local self.authority to a new authority.
         """
         self.authority = authority
+        return self
 
     def set_path(self, path):
         """
         Set the local.path to a new path.
         """
         self.path = path
+        return self
 
     def add_query(self, query):
         """
@@ -109,11 +112,14 @@ class UrlBuilder():
         else:
             self.query += "&" + query
 
+        return self
+
     def set_fragment(self, fragment):
         """
         Set the fragment of the url.
         """
         self.fragment = fragment
+        return self
 
     def is_valid(self):
         """

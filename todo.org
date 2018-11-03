@@ -1,18 +1,14 @@
 #+STARTUP: showeverything
 
-* Todo [5/15]
+* Todo [5/11]
   1. [X] Implement unit tests
   2. [ ] Convert entire module to PyPI
-  3. [ ] copy requests from urllib
-  4. [ ] go through all of urllib and see what I can add to mine and/or do better with mine
-  5. [X] urlparser: Getters and Setters: username, password
-  6. [X] urlparser: Getters and Setters: port, hostname
-  7. [ ] urlbuilder: Getters and Setters: username, password
-  8. [ ] urlbuilder: Getters and Setters: port, hostname
-  9. [X] Have Getters and Setters return None instead of returning ""
-  10. [ ] Remake the robotparser.py script from urllib
-  11. [X] Make the urlerror.py classes
-  12. [ ] Implement the urlerror classes into urlrobotparser
-  13. [ ] Instead of always returning the url in the form of a string, return it as a URL object of some sort
-  14. [ ] Do the same as above for urlbuilder
-  15. [ ] Do the same as above for urlparser
+  3. [X] urlparser: Getters and Setters: username, password
+  4. [X] urlparser: Getters and Setters: port, hostname
+  5. [ ] urlbuilder: Getters and Setters: username, password
+  6. [ ] urlbuilder: Getters and Setters: port, hostname
+  7. [X] Have Getters and Setters return None instead of returning ""
+  8. [ ] Remake the robotparser.py script from urllib
+  9. [X] Make the urlerror.py classes
+  10. [ ] Implement the urlerror classes into urlrobotparser
+  11. [ ] Instead of always returning the url in the form of a string, return it as a 'URL' object

@@ -48,10 +48,8 @@ class TestUrlParser(unittest.TestCase):
 
 class TestUrlBuilder(unittest.TestCase):
     url = UrlBuilder()
-    url.set_authority("www.example.com")
-    url.set_path("/path/to/file")
-    url.set_scheme("https")
-    url.set_fragment("fragment")
+    url.set_authority("www.example.com").set_path("/path/to/file")
+    url.set_scheme("https").set_fragment("fragment")
     url.add_query("name=example1")
     url.add_query("username=example2")
 
