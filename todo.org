@@ -1,0 +1,16 @@
+#+STARTUP: showeverything
+
+* Todo [7%] [1/13]
+  - [X] Implement unit tests
+  - [ ] Convert entire module to PyPI
+  - [ ] copy requests from urllib
+  - [ ] go through all of urllib and see what I can add to mine and/or do better with mine
+  - [ ] Comform to ALL of RFC 3986
+  - [ ] Getters and Setters: username, password, port, hostname
+  - [ ] Have Getters and Setters return None instead of returning ""
+  - [ ] Remake the robotparser.py script from urllib
+  - [ ] Make the urlerror.py classes
+  - [ ] Implement the urlerror classes into urlparser and urlbuilder and urlrobotparser
+  - [ ] Instead of always returning the url in the form of a string, return it as a URL object of some sort
+  - [ ] Do the same as above for urlbuilder
+  - [ ] Do the same as above for urlparser
