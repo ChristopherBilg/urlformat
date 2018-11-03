@@ -43,7 +43,7 @@ class UrlBuilder():
         """
         return len(self.build_url())
 
-    def build_url(self, ignore_invalid=False):
+    def build_url(self, check_validity=True):
         """
         Build the full url as a string.
         """
@@ -74,7 +74,7 @@ class UrlBuilder():
 
         built_url = scheme + authority + path + query + fragment
 
-        if not ignore_invalid:
+        if check_validity:
             if not self.is_valid():
                 raise ValueError("The given url is not a valid url of form:\n"
                                  "\t(scheme://)([userInfo@]authority[:port])"
