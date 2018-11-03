@@ -47,16 +47,6 @@ class UrlBuilder():
         """
         Build the full url as a string.
         """
-        if self.query is None:
-            query = ""
-        else:
-            query = "?" + self.query
-
-        if self.fragment is None:
-            fragment = ""
-        else:
-            fragment = "#" + self.fragment
-
         if self.scheme is None:
             scheme = ""
         else:
@@ -71,6 +61,16 @@ class UrlBuilder():
             path = ""
         else:
             path = self.path
+
+        if self.query is None:
+            query = ""
+        else:
+            query = "?" + self.query
+
+        if self.fragment is None:
+            fragment = ""
+        else:
+            fragment = "#" + self.fragment
 
         built_url = scheme + authority + path + query + fragment
 
