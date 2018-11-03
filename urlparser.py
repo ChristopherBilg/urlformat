@@ -122,10 +122,10 @@ class UrlParser():
             if ":" in self.match.group(4).split("@")[1]:
                 return self.match.group(4).split("@")[1].split(":")[0]
             return self.match.group(4).split("@")[1]
-        else:
-            if ":" in self.match.group(4):
-                return self.match.group(4).split(":")[0]
-            return self.match.group(4)
+
+        if ":" in self.match.group(4):
+            return self.match.group(4).split(":")[0]
+        return self.match.group(4)
 
     def get_port(self):
         """
@@ -135,10 +135,10 @@ class UrlParser():
             if ":" in self.match.group(4).split("@")[1]:
                 return self.match.group(4).split("@")[1].split(":")[1]
             return None
-        else:
-            if ":" in self.match.group(4):
-                return self.match.group(4).split(":")[1]
-            return None
+
+        if ":" in self.match.group(4):
+            return self.match.group(4).split(":")[1]
+        return None
 
 
 if __name__ == "__main__":

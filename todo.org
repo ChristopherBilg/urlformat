@@ -1,6 +1,6 @@
 #+STARTUP: showeverything
 
-* Todo [5/12]
+* Todo [5/13]
   1. [X] Implement unit tests
   2. [ ] Convert entire module to PyPI and then upload to PyPI
   3. [X] urlparser: Getters and Setters: username, password
@@ -13,3 +13,4 @@
   10. [ ] Implement the urlerror classes into urlrobotparser
   11. [ ] Instead of always returning the url in the form of a string, return it as a 'URL' object
   12. [ ] Make a wiki on how to use this module; after converting and uploading to PyPI
+  13. [ ] In constructor has a parameter that is instanceof(self), continue with new constructor type
