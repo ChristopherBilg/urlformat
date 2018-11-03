@@ -15,4 +15,9 @@ pylint urltester.py --score=no --disable=C0111
 pycodestyle urltester.py
 flake8 urltester.py
 
+echo "Starting lint on urlerrors.py"
+pylint urlerrors.py --score=no --disable=C0111
+pycodestyle urlerrors.py
+flake8 urlerrors.py
+
 echo "Finished linting all files"
