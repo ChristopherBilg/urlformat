@@ -3,6 +3,7 @@
 Parser class for parsing through web urls.
 """
 import re
+import urlerrors
 
 
 class UrlParser():
@@ -17,6 +18,9 @@ class UrlParser():
         self.match = re.search(
             r"^(([^:/?#]+):)?(//([^/?#]*))?([^?#]*)(\?([^#]*))?(#(.*))?",
             url)
+
+        if not self.is_valid():
+            raise urlerrors.InvalidURLError
 
     def __repr__(self):
         """
@@ -97,10 +101,8 @@ class UrlParser():
         if "@" in self.match.group(4):
             if ":" in self.match.group(4).split("@")[0]:
                 return self.match.group(4).split("@")[0].split(":")[0]
-            else:
-                return self.match.group(4).split("@")[0]
-        else:
-            return None
+            return self.match.group(4).split("@")[0]
+        return None
 
     def get_password(self):
         """
@@ -109,10 +111,8 @@ class UrlParser():
         if "@" in self.match.group(4):
             if ":" in self.match.group(4).split("@")[0]:
                 return self.match.group(4).split("@")[0].split(":")[1]
-            else:
-                return None
-        else:
             return None
+        return None
 
     def get_hostname(self):
         """
@@ -121,13 +121,11 @@ class UrlParser():
         if "@" in self.match.group(4):
             if ":" in self.match.group(4).split("@")[1]:
                 return self.match.group(4).split("@")[1].split(":")[0]
-            else:
-                return self.match.group(4).split("@")[1]
+            return self.match.group(4).split("@")[1]
         else:
             if ":" in self.match.group(4):
                 return self.match.group(4).split(":")[0]
-            else:
-                return self.match.group(4)
+            return self.match.group(4)
 
     def get_port(self):
         """
@@ -136,13 +134,11 @@ class UrlParser():
         if "@" in self.match.group(4):
             if ":" in self.match.group(4).split("@")[1]:
                 return self.match.group(4).split("@")[1].split(":")[1]
-            else:
-                return None
+            return None
         else:
             if ":" in self.match.group(4):
                 return self.match.group(4).split(":")[1]
-            else:
-                return None
+            return None
 
 
 if __name__ == "__main__":
