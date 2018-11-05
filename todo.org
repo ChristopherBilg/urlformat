@@ -1,16 +1,18 @@
 #+STARTUP: showeverything
 
-* Todo [5/13]
+* Todo [9/15] [60%]
   1. [X] Implement unit tests
-  2. [ ] Convert entire module to PyPI and then upload to PyPI
-  3. [X] urlparser: Getters and Setters: username, password
-  4. [X] urlparser: Getters and Setters: port, hostname
-  5. [ ] urlbuilder: Getters and Setters: username, password
-  6. [ ] urlbuilder: Getters and Setters: port, hostname
-  7. [X] Have Getters and Setters return None instead of returning ""
-  8. [ ] Remake the robotparser.py script from urllib
-  9. [X] Make the urlerror.py classes
-  10. [ ] Implement the urlerror classes into urlrobotparser
-  11. [ ] Instead of always returning the url in the form of a string, return it as a 'URL' object
-  12. [ ] Make a wiki on how to use this module; after converting and uploading to PyPI
-  13. [ ] In constructor has a parameter that is instanceof(self), continue with new constructor type
+  2. [X] urlparser: Getters and Setters: username, password
+  3. [X] urlparser: Getters and Setters: port, hostname
+  4. [X] urlbuilder: Getters and Setters: username, password
+  5. [X] urlbuilder: Getters and Setters: port, hostname
+  6. [X] Have Getters and Setters return None instead of returning ""
+  7. [X] Make the urlerror.py classes
+  8. [X] Instead of always returning the url in the form of a string, return it as a 'URL' object
+  9. [X] In constructor has a parameter that is instanceof(self), continue with new constructor type
+  10. [ ] Remake the robotparser.py script from urllib
+  11. [ ] Implement the urlerror classes into urlrobotparser
+  12. [ ] unittest for robotparser.py
+  13. [ ] linter for robotparser.py
+  14. [ ] Convert entire module to PyPI and then upload to PyPI
+  15. [ ] Make a wiki on how to use this module; after converting and uploading to PyPI
