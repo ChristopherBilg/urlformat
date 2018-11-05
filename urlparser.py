@@ -26,19 +26,19 @@ class UrlParser():
         """
         Formal string representation of the url.
         """
-        return self.get_url()
+        return self.match.group(0)
 
     def __str__(self):
         """
         Informal string representation of the url.
         """
-        return self.get_url()
+        return self.match.group(0)
 
     def __len__(self):
         """
         Implementation of the len() method.
         """
-        return len(self.get_url())
+        return len(self.match.group(0))
 
     def get_url(self):
         """
