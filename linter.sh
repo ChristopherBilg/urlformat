@@ -20,4 +20,9 @@ pylint urlerrors.py --score=no --disable=C0111
 pycodestyle urlerrors.py
 flake8 urlerrors.py
 
+echo "Starting lint on robotparser.py"
+pylint robotparser.py --score=no --disable=C0111
+pycodestyle robotparser.py
+flake8 robotparser.py
+
 echo "Finished linting all files"
