@@ -23,9 +23,55 @@ class RobotParser:
         with open(self.file_, "r") as file_:
             lines = file_.readlines()
 
-        print(lines)
+        current_user_agent = ""
+        allowed = {}
+        disallowed = {}
 
-        # continue here
+        for line in lines:
+            o_line = line
+            # Get rid of all spaces in beginning of line
+            while line.startswith(" "):
+                line = line[1:]
+
+            # Make the line lowercase
+            line = line.lower()
+
+            # Remove the newline at the end of each line
+            line = line.rstrip()
+
+            # Remove commented out lines
+            if line.startswith("#"):
+                lines.remove(o_line)
+
+            # Create a list of list of user-agents and allow/disallow
+            if line.startswith("user-agent:"):
+                agent = line.split("user-agent:")[1]
+                while agent.startswith(" "):
+                    agent = agent[1:]
+
+                current_user_agent = agent
+            elif line.startswith("allow:"):
+                allowed_path = line.split("allow:")[1]
+                while allowed_path.startswith(" "):
+                    allowed_path = allowed_path[1:]
+
+                allowed.update(current_user_agent,
+                               [allowed.get(current_user_agent), allowed_path])
+            elif line.startswith("disallow:"):
+                disallowed_path = line.split("disallow: ")[1]
+                while disallowed_path.startswith(" "):
+                    disallowed_path = disallowed_path[1:]
+
+                disallowed.update(current_user_agent,
+                                  [disallowed.get(current_user_agent),
+                                   disallowed_path])
+
+        for line in lines:
+            print(line)
+
+        print(current_user_agent)
+        print(allowed)
+        print(disallowed)
 
     def is_allowed(self, url):
         """

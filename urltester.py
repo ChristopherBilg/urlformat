@@ -6,6 +6,7 @@ Class for testing the UrlParser and UrlBuilder classes.
 import unittest
 from urlparser import UrlParser
 from urlbuilder import UrlBuilder
+from robotparser import RobotParser
 
 
 class TestUrlParser(unittest.TestCase):
@@ -63,4 +64,5 @@ class TestUrlBuilder(unittest.TestCase):
 
 
 if __name__ == "__main__":
+    RobotParser("test_robots.txt").parse()
     unittest.main()
