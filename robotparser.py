@@ -16,6 +16,9 @@ class RobotParser:
             raise TypeError("No valid file has been given.")
         self.file_ = file_
 
+        self.allowed = {}
+        self.disallowed = {}
+
     def parse(self):
         """
         Method for parsing through and gaining information from the file.
@@ -27,56 +30,51 @@ class RobotParser:
         allowed = {}
         disallowed = {}
 
-        for line in lines:
-            o_line = line
-            # Get rid of all spaces in beginning of line
+        # Get rid of all spaces in beginning of line
+        for index, line in enumerate(lines):
             while line.startswith(" "):
-                line = line[1:]
+                lines[index] = line[1:]
 
-            # Make the line lowercase
-            line = line.lower()
+        # Get rid of ending newline
+        for index, line in enumerate(lines):
+            lines[index] = line.strip("\n")
 
-            # Remove the newline at the end of each line
-            line = line.rstrip()
+        # Get ride of all spaces in the end of the line
+        for index, line in enumerate(lines):
+            while line.endswith(" "):
+                lines[index] = line[:-1]
 
-            # Remove commented out lines
-            if line.startswith("#"):
-                lines.remove(o_line)
+        # Make the entire line lowercase
+        for index, line in enumerate(lines):
+            lines[index] = line.lower()
 
-            # Create a list of list of user-agents and allow/disallow
-            if line.startswith("user-agent:"):
-                agent = line.split("user-agent:")[1]
-                while agent.startswith(" "):
-                    agent = agent[1:]
+        # Remove blank lines
+        for index, line in enumerate(lines):
+            if line == "":
+                del lines[index]
 
-                current_user_agent = agent
-            elif line.startswith("allow:"):
-                allowed_path = line.split("allow:")[1]
-                while allowed_path.startswith(" "):
-                    allowed_path = allowed_path[1:]
-
-                allowed.update(current_user_agent,
-                               [allowed.get(current_user_agent), allowed_path])
-            elif line.startswith("disallow:"):
-                disallowed_path = line.split("disallow: ")[1]
-                while disallowed_path.startswith(" "):
-                    disallowed_path = disallowed_path[1:]
-
-                disallowed.update(current_user_agent,
-                                  [disallowed.get(current_user_agent),
-                                   disallowed_path])
-
+        # Check for one of three beginning states
+        # user-agent, allow, or disallow
         for line in lines:
-            print(line)
+            if line.startswith("user-agent:"):
+                current_user_agent = line.split(": ")[1]
+            elif line.startswith("allow:"):
+                if allowed.get(current_user_agent) is None:
+                    allowed[current_user_agent] = line.split(": ")[1]
+                else:
+                    allowed[current_user_agent] = list(allowed.get(
+                        current_user_agent)) + [line.split(": ")[1]]
+            elif line.startswith("disallow:"):
+                if disallowed.get(current_user_agent) is None:
+                    disallowed[current_user_agent] = line.split(": ")[1]
+                else:
+                    disallowed[current_user_agent] = list(disallowed.get(
+                        current_user_agent)) + [line.split(": ")[1]]
 
-        print(current_user_agent)
-        print(allowed)
-        print(disallowed)
+        self.allowed = allowed
+        self.disallowed = disallowed
 
-    def is_allowed(self, url):
-        """
-        Boolean method to determine if a given url is valid to be
-        crawling the given website containing the current robots.txt
-        """
+        print(self.allowed)
+        print(self.disallowed)
 
-        # continue here
+        return True
