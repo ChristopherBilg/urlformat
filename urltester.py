@@ -4,9 +4,9 @@ Class for testing the UrlParser and UrlBuilder classes.
 (scheme://)([userInfo@]authority[:port])[/path/to/file][?query][#fragment]
 """
 import unittest
+from robotparser import RobotParser
 from urlparser import UrlParser
 from urlbuilder import UrlBuilder
-from robotparser import RobotParser
 
 
 class TestUrlParser(unittest.TestCase):
@@ -63,6 +63,12 @@ class TestUrlBuilder(unittest.TestCase):
                 "1&username=example2#fragment")
 
 
+class TestRobotParser(unittest.TestCase):
+    robot = RobotParser("test_robots.txt")
+
+    def test_parse(self):
+        assert self.robot.parse()
+
+
 if __name__ == "__main__":
-    RobotParser("test_robots.txt").parse()
     unittest.main()
