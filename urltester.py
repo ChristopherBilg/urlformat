@@ -69,6 +69,15 @@ class TestRobotParser(unittest.TestCase):
     def test_parse(self):
         assert self.robot.parse()
 
+    def test_is_allowed(self):
+        self.robot.parse()
+        assert self.robot.is_allowed("mj12bot", "/path/to/file.index")
+
+    def test_is_disallowed(self):
+        self.robot.parse()
+        user_agent = "Mediapartners-Google*".lower()
+        assert self.robot.is_disallowed(user_agent, "/")
+
 
 if __name__ == "__main__":
     unittest.main()
