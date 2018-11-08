@@ -74,7 +74,30 @@ class RobotParser:
         self.allowed = allowed
         self.disallowed = disallowed
 
-        print(self.allowed)
-        print(self.disallowed)
+        return True
+
+    def is_allowed(self, user_agent, path):
+        """
+        Boolean method for determining if a given user_agent
+        is allowed to access a given path.
+        """
+        if user_agent not in self.allowed.keys():
+            return False
+
+        if path not in self.allowed.get(user_agent):
+            return False
+
+        return True
+
+    def is_disallowed(self, user_agent, path):
+        """
+        Boolean method for determining if a given user_agent
+        is disallowed from accessing a given path.
+        """
+        if user_agent not in self.disallowed.keys():
+            return False
+
+        if path not in self.disallowed.get(user_agent):
+            return False
 
         return True
