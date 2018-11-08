@@ -1,6 +1,6 @@
 #+STARTUP: showeverything
 
-* Todo [10/17] [58%]
+* Todo [10/18] [55%]
   1. [X] Implement unit tests
   2. [X] urlparser: Getters and Setters: username, password
   3. [X] urlparser: Getters and Setters: port, hostname
@@ -26,3 +26,4 @@
   15. [ ] linter for sitemapparser.py
   16. [ ] Convert entire module to PyPI and then upload to PyPI
   17. [ ] Make a wiki on how to use this module; after converting and uploading to PyPI
+  18. [ ] Play around with regex in urlformat python files
