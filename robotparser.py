@@ -18,6 +18,9 @@ class RobotParser:
 
         self.allowed = {}
         self.disallowed = {}
+        self.crawl_delays = {}
+        self.request_rates = {}
+        self.sitemaps = {}
 
     def parse(self):
         """
@@ -29,6 +32,9 @@ class RobotParser:
         current_user_agent = ""
         allowed = {}
         disallowed = {}
+        crawl_delays = {}
+        request_rates = {}
+        sitemaps = {}
 
         # Get rid of all spaces in beginning of line
         for index, line in enumerate(lines):
@@ -54,7 +60,7 @@ class RobotParser:
                 del lines[index]
 
         # Check for one of three beginning states
-        # user-agent, allow, or disallow
+        # user-agent, allow, disallow, crawl-delay, request-rate, sitemap
         for line in lines:
             if line.startswith("user-agent:"):
                 current_user_agent = line.split(": ")[1]
@@ -70,9 +76,20 @@ class RobotParser:
                 else:
                     disallowed[current_user_agent] = list(disallowed.get(
                         current_user_agent)) + [line.split(": ")[1]]
+            elif line.startswith("crawl-delay:"):
+                if line.split(": ")[1].isnumeric():
+                    crawl_delays[current_user_agent] = line.split(": ")[1]
+            elif line.startswith("request-rate:"):
+                if line.split(": ")[1].isnumeric():
+                    request_rates[current_user_agent] = line.split(": ")[1]
+            elif line.startswith("sitemap:"):
+                sitemaps[current_user_agent] = line.split(": ")[1]
 
         self.allowed = allowed
         self.disallowed = disallowed
+        self.crawl_delays = crawl_delays
+        self.request_rates = request_rates
+        self.sitemaps = sitemaps
 
         return True
 
@@ -101,3 +118,29 @@ class RobotParser:
             return False
 
         return True
+
+    def get_crawl_delay(self, user_agent):
+        """
+        Getter method for the crawl delay for a specific user_agent.
+        Returns 0 if none is specified.
+        """
+        if user_agent in self.crawl_delays.keys():
+            return int(self.crawl_delays.get(user_agent))
+
+        return 0
+
+    def get_request_rate(self, user_agent):
+        """
+        Getter method for the request rate for a specific user_agent.
+        Returns 0 if none is specified.
+        """
+        if user_agent in self.request_rates.keys():
+            return int(self.request_rates.get(user_agent))
+
+        return 0
+
+    def get_sitemap(self, user_agent):
+        if user_agent in self.sitemaps.keys():
+            return self.sitemaps.get(user_agent)
+
+        return None
