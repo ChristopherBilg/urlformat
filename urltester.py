@@ -65,18 +65,28 @@ class TestUrlBuilder(unittest.TestCase):
 
 class TestRobotParser(unittest.TestCase):
     robot = RobotParser("test_robots.txt")
+    user_agent1 = "MJ12bot".lower()
+    user_agent2 = "Mediapartners-Google*".lower()
+
+    robot.parse()
 
     def test_parse(self):
         assert self.robot.parse()
 
     def test_is_allowed(self):
-        self.robot.parse()
-        assert self.robot.is_allowed("mj12bot", "/path/to/file.index")
+        assert self.robot.is_allowed(self.user_agent1, "/path/to/file.index")
 
     def test_is_disallowed(self):
-        self.robot.parse()
-        user_agent = "Mediapartners-Google*".lower()
-        assert self.robot.is_disallowed(user_agent, "/")
+        assert self.robot.is_disallowed(self.user_agent2, "/")
+
+    def test_crawl_delay(self):
+        assert self.robot.get_crawl_delay(self.user_agent1) == 6
+
+    def test_request_rate(self):
+        assert self.robot.get_request_rate(self.user_agent2) == 4
+
+    def test_sitemap(self):
+        assert self.robot.get_sitemap(self.user_agent2) == "/path/to/sitemap"
 
 
 if __name__ == "__main__":
