@@ -1,6 +1,6 @@
 #+STARTUP: showeverything
 
-* Todo [11/18] [61%]
+* Todo [12/18] [66%]
   1. [X] Implement unit tests
   2. [X] urlparser: Getters and Setters: username, password
   3. [X] urlparser: Getters and Setters: port, hostname
@@ -10,15 +10,16 @@
   7. [X] Make the urlerror.py classes
   8. [X] Instead of always returning the url in the form of a string, return it as a 'URL' object
   9. [X] In constructor has a parameter that is instanceof(self), continue with new constructor type
-  10. [-] Remake the robotparser.py script from urllib
+  10. [X] Remake the robotparser.py script from urllib
       1. [X] parse()
       2. [X] is_allowed()
       3. [X] is_disallowed()
-      4. [ ] request_rate directive
-      5. [ ] sitemap directive
-      6. [ ] crawl-delay directive
-      7. [ ] get_request_rate()
-      8. [ ] get_crawl_delay()
+      4. [X] request_rate directive
+      5. [X] sitemap directive
+      6. [X] crawl-delay directive
+      7. [X] get_request_rate()
+      8. [X] get_crawl_delay()
+      9. [X] get_sitemap()
   11. [X] unittest for robotparser.py
   12. [X] linter for robotparser.py
   13. [ ] Make a SiteMap parser class (sitemapparser.py)
