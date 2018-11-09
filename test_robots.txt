@@ -1,0 +1,21 @@
+# robots.txt for http://www.wikipedia.org/ and friends
+#
+# Please note: There are a lot of pages on this site, and there are
+# some misbehaved spiders out there that go _way_ too fast. If you're
+# irresponsible, your access to the site may be blocked.
+#
+
+# Observed spamming large amounts of https://en.wikipedia.org/?curid=NNNNNN
+# and ignoring 429 ratelimit responses, claims to respect robots:
+# http://mj12bot.com/
+User-agent: MJ12bot
+Disallow: /
+Allow: /path/to/file.index
+Crawl-Delay: 6
+
+# advertising-related bots:
+User-agent: Mediapartners-Google*
+Disallow: /
+Disallow: /path/to/directory
+Request-Rate: 4
+Sitemap: /path/to/sitemap
