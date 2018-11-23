@@ -1,6 +1,6 @@
 #+STARTUP: showeverything
 
-* Todo [13/21] [61%]
+* Todo [13/22] [59%]
   1. [X] Implement unit tests
   2. [X] urlparser: Getters and Setters: username, password
   3. [X] urlparser: Getters and Setters: port, hostname
@@ -31,3 +31,4 @@
   19. [ ] Put UnbuiltURLError into urlbuilder.build()
   20. [ ] move linter.sh to /urlformat instead of /urlformat/urlformat and update it
   21. [ ] fix "import urlerrors" to work when imported in urlparser and urlbuilder
+  22. [ ] fix importing from "import urlformat.urlformat.urlparser as urlparser" to "from urlformat import UrlParser"
