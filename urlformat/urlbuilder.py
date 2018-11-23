@@ -3,6 +3,7 @@
 Class for building valid urls.
 """
 import re
+from . import urlerrors
 
 
 class UrlBuilder():
@@ -76,9 +77,10 @@ class UrlBuilder():
 
         if check_validity:
             if not self.is_valid():
-                raise ValueError("The given url is not a valid url of form:\n"
-                                 "\t(scheme://)([userInfo@]authority[:port])"
-                                 "[/path/to/file][?query][#fragment]")
+                raise urlerrors.UnbuiltURLError(
+                    "The given url is not a valid url of form:\n"
+                    "\t(scheme://)([userInfo@]authority[:port])"
+                    "[/path/to/file][?query][#fragment]")
 
         return built_url
 
