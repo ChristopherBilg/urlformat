@@ -1,7 +1,7 @@
 import setuptools
 
 with open("README.md", "r") as fh:
-    long_description = fh.read()
+    LONG_DESCRIPTION = fh.read()
 
 setuptools.setup(
     name="urlformat",
@@ -11,7 +11,7 @@ setuptools.setup(
     license="GNU General Public License v2 (GPLv2)",
     keywords="url format uri web address website search index",
     description="A package for formatting valid URL's.",
-    long_description=long_description,
+    long_description=LONG_DESCRIPTION,
     long_description_content_type="text/markdown",
     url="https://github.com/ChristopherBilg/urlformat",
     packages=setuptools.find_packages(),
