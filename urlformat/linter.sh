@@ -25,4 +25,9 @@ pylint robotparser.py --score=no --disable=C0111,R0912
 pycodestyle robotparser.py
 flake8 robotparser.py
 
+echo "Starting lint on ../setup.py"
+pylint ../setup.py --score=no --disable=C0111,R0912
+pycodestyle ../setup.py
+flake8 ../setup.py
+
 echo "Finished linting all files"
