@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="urlformat",
-    version="0.0.12",  # MAJOR.MINOR.MAINTENANCE
+    version="0.0.13",  # MAJOR.MINOR.MAINTENANCE
     author="Christopher Richard Bilger",
     author_email="christopherbigl@gmail.com",
     license="GNU General Public License v2 (GPLv2)",
