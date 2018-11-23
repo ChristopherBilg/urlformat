@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="urlformat",
-    version="0.0.9",  # MAJOR.MINOR.MAINTENANCE
+    version="0.0.12",  # MAJOR.MINOR.MAINTENANCE
     author="Christopher Richard Bilger",
     author_email="christopherbigl@gmail.com",
     license="GNU General Public License v2 (GPLv2)",
@@ -14,7 +14,7 @@ setuptools.setup(
     long_description=LONG_DESCRIPTION,
     long_description_content_type="text/markdown",
     url="https://github.com/ChristopherBilg/urlformat",
-    packages=setuptools.find_packages(),
+    packages=["urlformat"],  # packages are directories of modules (*.py files)
     classifiers=[
         "Programming Language :: Python :: 3 :: Only",
         "License :: OSI Approved :: GNU General Public License v2 (GPLv2)",
