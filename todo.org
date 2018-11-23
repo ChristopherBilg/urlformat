@@ -1,6 +1,6 @@
 #+STARTUP: showeverything
 
-* Todo [14/22] [63%]
+* Todo [16/22] [72%]
   1. [X] Implement unit tests
   2. [X] urlparser: Getters and Setters: username, password
   3. [X] urlparser: Getters and Setters: port, hostname
@@ -28,7 +28,7 @@
   16. [ ] Convert entire module to PyPI and then upload to PyPI
   17. [ ] Make a wiki on how to use this module; after converting and uploading to PyPI
   18. [X] Play around with regex in urlformat python files
-  19. [ ] fix "import urlerrors" to work when imported in urlparser and urlbuilder
-  20. [ ] Put UnbuiltURLError into urlbuilder.build()
-  21. [ ] move linter.sh to /urlformat instead of /urlformat/urlformat and update it
-  22. [X] fix importing from "import urlformat.urlformat.urlparser as urlparser" to "from urlformat import UrlParser"
+  19. [X] fix "import urlerrors" to work when imported in urlparser and urlbuilder
+  20. [X] Put UnbuiltURLError into urlbuilder.build()
+  21. [X] fix importing from "import urlformat.urlformat.urlparser as urlparser" to "from urlformat import UrlParser"
+  22. [ ] move linter.sh to /urlformat instead of /urlformat/urlformat and update it
