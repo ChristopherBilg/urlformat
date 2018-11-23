@@ -1,6 +1,6 @@
 #+STARTUP: showeverything
 
-* Todo [13/19] [68%]
+* Todo [13/20] [65%]
   1. [X] Implement unit tests
   2. [X] urlparser: Getters and Setters: username, password
   3. [X] urlparser: Getters and Setters: port, hostname
@@ -29,3 +29,4 @@
   17. [ ] Make a wiki on how to use this module; after converting and uploading to PyPI
   18. [X] Play around with regex in urlformat python files
   19. [ ] Put UnbuiltURLError into urlbuilder.build()
+  20. [ ] move linter.sh to /urlformat instead of /urlformat/urlformat and update it 
