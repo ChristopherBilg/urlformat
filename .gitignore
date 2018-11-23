@@ -1,1 +1,4 @@
-*/__pycache__/*
+urlformat/__pycache__/*
+build/
+dist/
+urlformat.egg-info/
