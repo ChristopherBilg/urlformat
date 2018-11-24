@@ -1,6 +1,6 @@
 #+STARTUP: showeverything
 
-* Todo [16/22] [72%]
+* Todo [17/22] [77%]
   1. [X] Implement unit tests
   2. [X] urlparser: Getters and Setters: username, password
   3. [X] urlparser: Getters and Setters: port, hostname
@@ -22,13 +22,13 @@
       9. [X] get_sitemap()
   11. [X] unittest for robotparser.py
   12. [X] linter for robotparser.py
-  13. [ ] Make a SiteMap parser class (sitemapparser.py)
-  14. [ ] unittest for sitemapparser.py
-  15. [ ] linter for sitemapparser.py
-  16. [ ] Convert entire module to PyPI and then upload to PyPI
-  17. [ ] Make a wiki on how to use this module; after converting and uploading to PyPI
-  18. [X] Play around with regex in urlformat python files
-  19. [X] fix "import urlerrors" to work when imported in urlparser and urlbuilder
-  20. [X] Put UnbuiltURLError into urlbuilder.build()
-  21. [X] fix importing from "import urlformat.urlformat.urlparser as urlparser" to "from urlformat import UrlParser"
-  22. [ ] move linter.sh to /urlformat instead of /urlformat/urlformat and update it
+  13. [X] Convert entire module to PyPI and then upload to PyPI
+  14. [X] Play around with regex in urlformat python files
+  15. [X] fix "import urlerrors" to work when imported in urlparser and urlbuilder
+  16. [X] Put UnbuiltURLError into urlbuilder.build()
+  17. [X] fix importing from "import urlformat.urlformat.urlparser as urlparser" to "from urlformat import UrlParser"
+  18. [ ] move linter.sh to /urlformat instead of /urlformat/urlformat and update it
+  19. [ ] Make a wiki on how to use this module; after converting and uploading to PyPI
+  20. [ ] Make a SiteMap parser class (sitemapparser.py)
+  21. [ ] linter for sitemapparser.py
+  22. [ ] unittest for sitemapparser.py
