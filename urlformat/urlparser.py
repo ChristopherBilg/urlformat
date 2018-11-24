@@ -3,7 +3,6 @@
 Parser class for parsing through web urls.
 """
 import re
-from . import urlerrors
 
 
 class UrlParser():
@@ -20,8 +19,8 @@ class UrlParser():
             url)
 
         if not self.is_valid():
-            raise urlerrors.InvalidURLError
-            # pass
+            raise SyntaxError("The given url is not valid: "
+                              + self.match.group(0))
 
     def __repr__(self):
         """
