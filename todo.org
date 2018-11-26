@@ -1,6 +1,6 @@
 #+STARTUP: showeverything
 
-* Todo [17/24] [70%]
+* Todo [17/26] [65%]
   1. [X] Implement unit tests
   2. [X] urlparser: Getters and Setters: username, password
   3. [X] urlparser: Getters and Setters: port, hostname
@@ -33,4 +33,6 @@
   21. [ ] linter for sitemapparser.py
   22. [ ] unittest for sitemapparser.py
   23. [ ] Reimplement the urlerrors file and error types
-  24. [ ] As of python3.3, __init__.py files can be removed completely (https://www.python.org/dev/peps/pep-0420/)
+  24. [ ] Implement speed testings for python urlparser, urlbuilder, robotparser
+  25. [ ] Implement speed testings for C bindings of urlparser, urlbuilder, robotparser
+  26. [ ] As of python3.3, __init__.py files can be removed completely (https://www.python.org/dev/peps/pep-0420/)
