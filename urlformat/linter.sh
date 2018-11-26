@@ -1,6 +1,6 @@
 #!/bin/bash
 
-$disable_options = "--disable=C0111,R0912"
+disable_options="--disable=C0111,R0912"
 
 echo "Starting lint on urlparser.py"
 pylint urlparser.py --score=no $disable_options
