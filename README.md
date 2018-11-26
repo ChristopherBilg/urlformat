@@ -19,7 +19,9 @@ Usage:
 import urlformat.urlformat.urlparser as urlparser
 
 x = urlparser.UrlParser("https://www.google.com")
-x = x.get_query()
+x = x.get_scheme()
 
 print(x)
+
+Output: https
 ```
