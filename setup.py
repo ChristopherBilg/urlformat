@@ -26,5 +26,5 @@ setuptools.setup(
         "Intended Audience :: Developers",
         "Natural Language :: English",
     ],
-    python_requires=">=3"
+    python_requires=">=3.3"
 )
