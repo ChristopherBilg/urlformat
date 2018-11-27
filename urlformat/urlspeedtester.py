@@ -55,7 +55,7 @@ class SpeedTestRobotParser:
 
 
 if __name__ == "__main__":
-    ITTER = 1000000  # Itterations = 11 million
+    ITTER = 1000000  # Itterations = 1 million
     print("Testing over 1,000,000 itterations:")
 
     URL_P = SpeedTestUrlParser.test(ITTER)
