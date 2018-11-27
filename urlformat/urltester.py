@@ -10,6 +10,9 @@ from urlbuilder import UrlBuilder
 
 
 class TestUrlParser(unittest.TestCase):
+    """
+    Unit tests for the UrlParser class.
+    """
     url = UrlParser(
         "https://user:pass@www.google.com:8000/path/to/file?one=1&two=2#prod")
 
@@ -48,11 +51,13 @@ class TestUrlParser(unittest.TestCase):
 
 
 class TestUrlBuilder(unittest.TestCase):
+    """
+    Unit tests for the UrlBuilder class.
+    """
     url = UrlBuilder()
     url.set_authority("www.example.com").set_path("/path/to/file")
     url.set_scheme("https").set_fragment("fragment")
-    url.add_query("name=example1")
-    url.add_query("username=example2")
+    url.add_query("name=example1").add_query("username=example2")
 
     def test_valid(self):
         assert self.url.is_valid()
@@ -64,6 +69,9 @@ class TestUrlBuilder(unittest.TestCase):
 
 
 class TestRobotParser(unittest.TestCase):
+    """
+    Unit tests for the RobotParser class.
+    """
     robot = RobotParser("test_robots.txt")
     user_agent1 = "MJ12bot".lower()
     user_agent2 = "Mediapartners-Google*".lower()
