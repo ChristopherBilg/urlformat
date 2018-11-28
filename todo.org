@@ -1,6 +1,6 @@
 #+STARTUP: showeverything
 
-* Todo [19/27] [70%]
+* Todo [20/27] [74%]
   1. [X] Implement unit tests
   2. [X] urlparser: Getters and Setters: username, password
   3. [X] urlparser: Getters and Setters: port, hostname
@@ -34,6 +34,6 @@
   22. [ ] linter for sitemapparser.py
   23. [ ] unittest for sitemapparser.py
   24. [ ] Reimplement the urlerrors file and error types
-  25. [ ] Implement speed testings for python urlparser, urlbuilder, robotparser
+  25. [X] Implement speed testings for python urlparser, urlbuilder, robotparser
   26. [ ] Implement .c files for urlparser, urlbuilder, robotparser
   27. [ ] Implement speed testings for C bindings of urlparser, urlbuilder, robotparser
