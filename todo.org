@@ -37,4 +37,6 @@
   25. [X] Implement speed testings for python urlparser, urlbuilder, robotparser
   26. [ ] Implement .c files for urlparser, urlbuilder, robotparser
   27. [ ] Implement speed testings for C bindings of urlparser, urlbuilder, robotparser
-  28. [ ] Add bash script arguments to only apply yapf linting when wanted
+  28. [ ] linter.sh/test.sh
+      1. [ ] Add bash script arguments to only apply yapf linting when wanted
+      2. [ ] Add bash script to itterate over all python files and format them
