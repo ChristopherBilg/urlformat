@@ -8,6 +8,7 @@ class RobotParser:
     """
     Class for parsing through robots.txt files.
     """
+
     def __init__(self, file_=None):
         """
         Initialization method.

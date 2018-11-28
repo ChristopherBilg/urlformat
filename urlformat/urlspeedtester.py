@@ -12,6 +12,7 @@ class SpeedTestUrlParser:
     """
     Speed tests for the UrlParser class.
     """
+
     @staticmethod
     def test(itterations):
         start_time = datetime.datetime.now()
@@ -27,6 +28,7 @@ class SpeedTestUrlBuilder:
     """
     Speed tests for the UrlBuilder class.
     """
+
     @staticmethod
     def test(itterations):
         start_time = datetime.datetime.now()
@@ -43,6 +45,7 @@ class SpeedTestRobotParser:
     """
     Speed tests for the RobotParser class.
     """
+
     @staticmethod
     def test(itterations):
         start_time = datetime.datetime.now()

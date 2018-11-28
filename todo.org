@@ -1,6 +1,6 @@
 #+STARTUP: showeverything
 
-* Todo [20/27] [74%]
+* Todo [20/28] [71%]
   1. [X] Implement unit tests
   2. [X] urlparser: Getters and Setters: username, password
   3. [X] urlparser: Getters and Setters: port, hostname
@@ -37,3 +37,4 @@
   25. [X] Implement speed testings for python urlparser, urlbuilder, robotparser
   26. [ ] Implement .c files for urlparser, urlbuilder, robotparser
   27. [ ] Implement speed testings for C bindings of urlparser, urlbuilder, robotparser
+  28. [ ] Add bash script arguments to only apply yapf linting when wanted

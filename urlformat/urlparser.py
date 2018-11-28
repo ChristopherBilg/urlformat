@@ -9,18 +9,18 @@ class UrlParser():
     """
     Main url parser class.
     """
+
     def __init__(self, url):
         """
         Initialization method.
         The url parameter must be a valid url of http or https
         """
         self.match = re.search(
-            r"^(([^:/?#]+):)?(//([^/?#]*))?([^?#]*)(\?([^#]*))?(#(.*))?",
-            url)
+            r"^(([^:/?#]+):)?(//([^/?#]*))?([^?#]*)(\?([^#]*))?(#(.*))?", url)
 
         if not self.is_valid():
-            raise SyntaxError("The given url is not valid: "
-                              + self.match.group(0))
+            raise SyntaxError("The given url is not valid: " +
+                              self.match.group(0))
 
     def __repr__(self):
         """
