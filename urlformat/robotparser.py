@@ -69,14 +69,16 @@ class RobotParser:
                 if allowed.get(current_user_agent) is None:
                     allowed[current_user_agent] = line.split(": ")[1]
                 else:
-                    allowed[current_user_agent] = list(allowed.get(
-                        current_user_agent)) + [line.split(": ")[1]]
+                    allowed[current_user_agent] = list(
+                        allowed.get(current_user_agent)) + list(
+                            line.split(": ")[1])
             elif line.startswith("disallow:"):
                 if disallowed.get(current_user_agent) is None:
                     disallowed[current_user_agent] = line.split(": ")[1]
                 else:
-                    disallowed[current_user_agent] = list(disallowed.get(
-                        current_user_agent)) + [line.split(": ")[1]]
+                    disallowed[current_user_agent] = list(
+                        disallowed.get(current_user_agent)) + list(
+                            line.split(": ")[1])
             elif line.startswith("crawl-delay:"):
                 if line.split(": ")[1].isnumeric():
                     crawl_delays[current_user_agent] = line.split(": ")[1]
