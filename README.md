@@ -16,9 +16,9 @@ pip install urlformat
 
 Usage:
 ```python
-import urlformat.urlformat.urlparser as urlparser
+import urlformat
 
-x = urlparser.UrlParser("https://www.google.com")
+x = urlformat.UrlParser("https://www.google.com")
 x = x.get_scheme()
 
 print(x)
