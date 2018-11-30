@@ -3,6 +3,7 @@
 Parser class for parsing through web urls.
 """
 import re
+from urlformat.errors import InvalidURLError
 
 
 class UrlParser():
@@ -19,8 +20,8 @@ class UrlParser():
             r"^(([^:/?#]+):)?(//([^/?#]*))?([^?#]*)(\?([^#]*))?(#(.*))?", url)
 
         if not self.is_valid():
-            raise SyntaxError("The given url is not valid: " +
-                              self.match.group(0))
+            raise InvalidURLError("The given url is not valid: " +
+                                  self.match.group(0))
 
     def __repr__(self):
         """

@@ -2,6 +2,7 @@
 """
 Class for parsing through robots.txt files.
 """
+from urlformat.errors import RobotNotFoundError
 
 
 class RobotParser:
@@ -14,7 +15,7 @@ class RobotParser:
         Initialization method.
         """
         if file_ is None:
-            raise TypeError("No valid file has been given.")
+            raise RobotNotFoundError("No valid file has been given.")
         self.file_ = file_
 
         self.allowed = {}

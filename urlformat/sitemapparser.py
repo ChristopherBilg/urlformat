@@ -2,6 +2,7 @@
 """
 Class for parsing through sitemap.xml files.
 """
+from urlformat.errors import SitemapNotFoundError
 
 
 class SitemapParser:
@@ -14,5 +15,5 @@ class SitemapParser:
         Initialization method.
         """
         if file_ is None:
-            raise TypeError("No valid file has been given.")
+            raise SitemapNotFoundError("No valid file has been given.")
         self.file_ = file_
