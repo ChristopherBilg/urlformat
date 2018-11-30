@@ -142,6 +142,16 @@ class RobotParser:
 
         return 0
 
+    def has_sitemap(self, user_agent):
+        """
+        Boolean method for determining is a given user_agent
+        has access to a sitemap for the current robots.txt file.
+        """
+        if user_agent in self.sitemaps.keys():
+            return True
+
+        return False
+
     def get_sitemap(self, user_agent):
         """
         Getter method for the sitemap given a specific user_agent.
@@ -149,4 +159,4 @@ class RobotParser:
         if user_agent in self.sitemaps.keys():
             return self.sitemaps.get(user_agent)
 
-        return None
+        raise RuntimeError("There is not a sitemap for the given user_agent.")
