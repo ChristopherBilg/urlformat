@@ -5,7 +5,7 @@ Error handling classes for URL's.
 
 class URLError(Exception):
     """
-    Base error class for other errors.
+    Base error class for URL errors.
     """
     pass
 
@@ -20,5 +20,19 @@ class InvalidURLError(URLError):
 class UnbuiltURLError(URLError):
     """
     Raised when a url is attempted to be built but cannot be successfully.
+    """
+    pass
+
+
+class SitemapError(Exception):
+    """
+    Base error class for Sitemap errors.
+    """
+    pass
+
+
+class SitemapNotFoundError(SitemapError):
+    """
+    Raised when a sitemap is not found in a specific robots.txt file.
     """
     pass
