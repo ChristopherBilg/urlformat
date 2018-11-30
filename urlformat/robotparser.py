@@ -143,6 +143,9 @@ class RobotParser:
         return 0
 
     def get_sitemap(self, user_agent):
+        """
+        Getter method for the sitemap given a specific user_agent.
+        """
         if user_agent in self.sitemaps.keys():
             return self.sitemaps.get(user_agent)
 
