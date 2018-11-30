@@ -6,6 +6,7 @@ import setuptools
 with open("README.md", "r") as fh:
     LONG_DESCRIPTION = fh.read()
 
+# setuptools for PyPI integration
 setuptools.setup(
     name="urlformat",
     version="0.0.16",  # MAJOR.MINOR.MAINTENANCE
