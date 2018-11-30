@@ -1,6 +1,6 @@
 #+STARTUP: showeverything
 
-* Todo [20/28] [71%]
+* Todo [21/29] [72%]
   1. [X] Implement unit tests
   2. [X] urlparser: Getters and Setters: username, password
   3. [X] urlparser: Getters and Setters: port, hostname
@@ -37,6 +37,7 @@
   25. [X] Implement speed testings for python urlparser, urlbuilder, robotparser
   26. [ ] Implement .c files for urlparser, urlbuilder, robotparser
   27. [ ] Implement speed testings for C bindings of urlparser, urlbuilder, robotparser
-  28. [ ] linter.sh/test.sh
-      1. [ ] Add bash script arguments to only apply yapf linting when wanted
-      2. [ ] Add bash script to itterate over all python files and format them
+  28. [X] linter.sh/test.sh
+      1. [X] Add bash script arguments to only apply yapf linting when wanted
+      2. [X] Add bash script to itterate over all python files and format them
+  29. [ ] Change ALL return types to be the same throughout the function, for all functions. That is, a function should only return True or False, or a String, never a "String or None"
