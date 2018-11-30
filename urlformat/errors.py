@@ -36,3 +36,17 @@ class SitemapNotFoundError(SitemapError):
     Raised when a sitemap is not found in a specific robots.txt file.
     """
     pass
+
+
+class RobotError(Exception):
+    """
+    Base error class for Robot errors.
+    """
+    pass
+
+
+class RobotNotFoundError(RobotError):
+    """
+    Raised when a robots file is not found at a given location.
+    """
+    pass
