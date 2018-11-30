@@ -1,3 +1,6 @@
+"""
+Module for use by PyPI to install the "urlformat" package.
+"""
 import setuptools
 
 with open("README.md", "r") as fh:
