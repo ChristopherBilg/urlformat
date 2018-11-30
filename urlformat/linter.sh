@@ -4,7 +4,7 @@ disable_options="C0111,R0903,R0912"
 py_files=("urlparser.py"
           "urlbuilder.py"
           "urltester.py"
-          "urlerrors.py"
+          "errors.py"
           "robotparser.py"
           "urlspeedtester.py"
           "../setup.py")
