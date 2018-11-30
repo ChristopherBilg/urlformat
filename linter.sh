@@ -13,7 +13,7 @@ py_files=("urlformat/urlparser.py"
 for i in "${py_files[@]}"
 do
     echo "Starting lint on ${i}"
-    pylint ${i} --score=no --disable=$disable_options
+    pylint ${i} --rcfile=setup.cfg
     pycodestyle ${i}
     flake8 ${i}
     yapf --style pep8 --diff ${i}
