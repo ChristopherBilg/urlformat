@@ -6,6 +6,7 @@ py_files=("urlparser.py"
           "urltester.py"
           "errors.py"
           "robotparser.py"
+          "sitemapparser.py"
           "urlspeedtester.py"
           "../setup.py")
 
