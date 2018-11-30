@@ -62,7 +62,8 @@ class UrlParser():
         """
         Getter method for the path that the url contains.
         """
-        return None if self.match.group(5) == "" else self.match.group(5)
+        # return None if self.match.group(5) == "" else self.match.group(5)
+        return self.match.group(5)
 
     def get_query(self):
         """
@@ -84,6 +85,7 @@ class UrlParser():
         """
         if self.match.group(2) is not None and self.match.group(4) is not None:
             return True
+
         return False
 
     def get_file(self):
@@ -92,6 +94,7 @@ class UrlParser():
         """
         if "/" in self.match.group(5):
             return self.match.group(5).split("/")[-1]
+
         return self.match.group(5)
 
     def get_username(self):
@@ -102,7 +105,8 @@ class UrlParser():
             if ":" in self.match.group(4).split("@")[0]:
                 return self.match.group(4).split("@")[0].split(":")[0]
             return self.match.group(4).split("@")[0]
-        return None
+
+        return ""
 
     def get_password(self):
         """
@@ -111,8 +115,9 @@ class UrlParser():
         if "@" in self.match.group(4):
             if ":" in self.match.group(4).split("@")[0]:
                 return self.match.group(4).split("@")[0].split(":")[1]
-            return None
-        return None
+            return ""
+
+        return ""
 
     def get_hostname(self):
         """
@@ -134,11 +139,11 @@ class UrlParser():
         if "@" in self.match.group(4):
             if ":" in self.match.group(4).split("@")[1]:
                 return self.match.group(4).split("@")[1].split(":")[1]
-            return None
+            return ""
 
         if ":" in self.match.group(4):
             return self.match.group(4).split(":")[1]
-        return None
+        return ""
 
 
 if __name__ == "__main__":

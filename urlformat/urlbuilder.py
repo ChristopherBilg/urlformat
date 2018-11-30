@@ -127,6 +127,7 @@ class UrlBuilder():
         """
         if self.scheme is not None and self.authority is not None:
             return True
+
         return False
 
 
