@@ -1,6 +1,6 @@
 #+STARTUP: showeverything
 
-* Todo [22/29] [75%]
+* Todo [23/29] [79%]
   1. [X] Implement unit tests
   2. [X] urlparser: Getters and Setters: username, password
   3. [X] urlparser: Getters and Setters: port, hostname
@@ -31,7 +31,7 @@
   19. [X] move linter.sh to /urlformat instead of /urlformat/urlformat and update it
   20. [ ] Make a wiki on how to use this module; after converting and uploading to PyPI
   21. [ ] Make a SiteMap parser class (sitemapparser.py)
-  22. [ ] linter for sitemapparser.py
+  22. [X] linter for sitemapparser.py
   23. [ ] unittest for sitemapparser.py
   24. [ ] Reimplement the urlerrors file and error types
   25. [X] Implement speed testings for python urlparser, urlbuilder, robotparser
