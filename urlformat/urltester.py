@@ -4,9 +4,9 @@ Class for testing the UrlParser and UrlBuilder classes.
 (scheme://)([userInfo@]authority[:port])[/path/to/file][?query][#fragment]
 """
 import unittest
-from robotparser import RobotParser
-from urlparser import UrlParser
-from urlbuilder import UrlBuilder
+from urlformat.robotparser import RobotParser
+from urlformat.urlparser import UrlParser
+from urlformat.urlbuilder import UrlBuilder
 
 
 class TestUrlParser(unittest.TestCase):
