@@ -3,9 +3,9 @@
 Class for testing the speed of specific classes.
 """
 import datetime
-from robotparser import RobotParser
-from urlparser import UrlParser
-from urlbuilder import UrlBuilder
+from urlformat.robotparser import RobotParser
+from urlformat.urlparser import UrlParser
+from urlformat.urlbuilder import UrlBuilder
 
 
 class SpeedTestUrlParser:
