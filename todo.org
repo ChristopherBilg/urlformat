@@ -1,6 +1,6 @@
 #+STARTUP: showeverything
 
-* Todo [23/29] [79%]
+* Todo [27/29] [93%]
   1. [X] Implement unit tests
   2. [X] urlparser: Getters and Setters: username, password
   3. [X] urlparser: Getters and Setters: port, hostname
@@ -29,14 +29,14 @@
   17. [X] fix importing from "import urlformat.urlformat.urlparser as urlparser" to "from urlformat import UrlParser"
   18. [X] As of python3.3, __init__.py files can be removed completely (https://www.python.org/dev/peps/pep-0420/)
   19. [X] move linter.sh to /urlformat instead of /urlformat/urlformat and update it
-  20. [ ] Make a wiki on how to use this module; after converting and uploading to PyPI
+  20. [X] Make a wiki on how to use this module; after converting and uploading to PyPI
   21. [ ] Make a SiteMap parser class (sitemapparser.py)
   22. [X] linter for sitemapparser.py
   23. [ ] unittest for sitemapparser.py
-  24. [ ] Reimplement the urlerrors file and error types
+  24. [X] Reimplement the urlerrors file and error types
   25. [X] Implement speed testings for python urlparser, urlbuilder, robotparser
-  26. [ ] Implement .c files for urlparser, urlbuilder, robotparser
-  27. [ ] Implement speed testings for C bindings of urlparser, urlbuilder, robotparser
+  26. [X] Implement .c files for urlparser, urlbuilder, robotparser
+  27. [X] Implement speed testings for C bindings of urlparser, urlbuilder, robotparser
   28. [X] linter.sh/test.sh
       1. [X] Add bash script arguments to only apply yapf linting when wanted
       2. [X] Add bash script to itterate over all python files and format them
