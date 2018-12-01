@@ -16,7 +16,7 @@ class SpeedTestUrlParser:
     @staticmethod
     def test(itterations):
         start_time = datetime.datetime.now()
-        for _ in range(itterations):
+        for _i in range(itterations):
             url = UrlParser("https://www.google.com/path/to?one=1&two=2#frag")
             url = url.get_scheme() + url.get_authority()
         end_time = datetime.datetime.now()
@@ -32,7 +32,7 @@ class SpeedTestUrlBuilder:
     @staticmethod
     def test(itterations):
         start_time = datetime.datetime.now()
-        for _ in range(itterations):
+        for _i in range(itterations):
             url = UrlBuilder().set_scheme("https")
             url.set_authority("www.google.com").set_path("/path/to")
             url.add_query("one=1").add_query("two=2").set_fragment("frag")
@@ -49,7 +49,7 @@ class SpeedTestRobotParser:
     @staticmethod
     def test(itterations):
         start_time = datetime.datetime.now()
-        for _ in range(itterations):
+        for _i in range(itterations):
             robot = RobotParser("test_robots.txt")
             robot.parse()
         end_time = datetime.datetime.now()
@@ -58,7 +58,7 @@ class SpeedTestRobotParser:
 
 
 if __name__ == "__main__":
-    ITTER = 1000000  # Itterations = 1 million
+    ITTER = 100000  # Itterations = 1 million
     print("Testing over 1,000,000 itterations:")
 
     URL_P = SpeedTestUrlParser.test(ITTER)
