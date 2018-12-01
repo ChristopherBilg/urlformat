@@ -148,10 +148,7 @@ class RobotParser:
         Boolean method for determining is a given user_agent
         has access to a sitemap for the current robots.txt file.
         """
-        if user_agent in self.sitemaps.keys():
-            return True
-
-        return False
+        return user_agent in self.sitemaps.keys()
 
     def get_sitemap(self, user_agent):
         """
