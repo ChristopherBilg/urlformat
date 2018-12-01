@@ -82,7 +82,7 @@ class UrlBuilder():
                     "\t(scheme://)([userInfo@]authority[:port])"
                     "[/path/to/file][?query][#fragment]")
 
-        return built_url
+        return self(built_url)
 
     def set_scheme(self, scheme):
         """
@@ -127,10 +127,7 @@ class UrlBuilder():
         """
         Boolean method for obtaining the validity of the built url.
         """
-        if self.scheme is not None and self.authority is not None:
-            return True
-
-        return False
+        return self.scheme is not None and self.authority is not None
 
 
 if __name__ == "__main__":
