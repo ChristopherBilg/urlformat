@@ -84,10 +84,8 @@ class UrlParser():
         """
         Boolean method for obtaining the validity of the parsed url.
         """
-        if self.match.group(2) is not None and self.match.group(4) is not None:
-            return True
-
-        return False
+        return (self.match.group(2) is not None
+                and self.match.group(4) is not None)
 
     def get_file(self):
         """
