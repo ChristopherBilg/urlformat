@@ -1,6 +1,6 @@
 #+STARTUP: showeverything
 
-* Todo [25/29] [86%]
+* Todo [25/30] [83%]
   1. [X] Implement unit tests
   2. [X] urlparser: Getters and Setters: username, password
   3. [X] urlparser: Getters and Setters: port, hostname
@@ -41,3 +41,4 @@
       1. [X] Add bash script arguments to only apply yapf linting when wanted
       2. [X] Add bash script to itterate over all python files and format them
   29. [X] Change ALL return types to be the same throughout the function, for all functions. That is, a function should only return True or False, or a String, never a "String or None"
+  30. [ ] Move the files urltester.py and urlspeedtester.py to the above directory (same as linter.sh)
