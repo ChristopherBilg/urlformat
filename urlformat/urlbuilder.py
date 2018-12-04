@@ -82,7 +82,7 @@ class UrlBuilder():
                     "\t(scheme://)([userInfo@]authority[:port])"
                     "[/path/to/file][?query][#fragment]")
 
-        return self(built_url)
+        return built_url
 
     def set_scheme(self, scheme):
         """
