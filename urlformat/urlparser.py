@@ -63,7 +63,6 @@ class UrlParser():
         """
         Getter method for the path that the url contains.
         """
-        # return None if self.match.group(5) == "" else self.match.group(5)
         return self.match.group(5)
 
     def get_query(self):
