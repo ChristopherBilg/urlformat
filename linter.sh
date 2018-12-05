@@ -1,13 +1,12 @@
 #!/bin/bash
 
-disable_options="C0111,R0903,R0912"
 py_files=("urlformat/urlparser.py"
           "urlformat/urlbuilder.py"
-          "urlformat/urltester.py"
           "urlformat/errors.py"
           "urlformat/robotparser.py"
-          "urlformat/sitemapparser.py"
-          "urlformat/urlspeedtester.py"
+          "urlformat/__init__.py"
+          "tests/urltester.py"
+          "tests/urlspeedtester.py"
           "setup.py")
 
 for i in "${py_files[@]}"
